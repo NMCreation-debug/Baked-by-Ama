@@ -440,11 +440,41 @@ footer p{
 <a href="#contact">Contact</a>
 </div>
 
-<a class="whatsapp-btn"
-href="https://wa.me/94766255747?text=Hello%20Baked%20By%20Ama,%20I%20want%20to%20order%20a%20cake."
-target="_blank">
-<i class="fab fa-whatsapp"></i> ORDER NOW
-</a>
+<!-- ADD THIS RIGHT BEFORE </body> -->
+
+<script>
+const form = document.querySelector("form");
+
+form.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const name = form.querySelector('input[type="text"]').value;
+    const phone = form.querySelector('input[type="tel"]').value;
+    const cake = form.querySelector('select').value;
+    const date = form.querySelector('input[type="date"]').value;
+    const details = form.querySelector('textarea').value;
+
+    const message =
+`Hello Baked By Ama!
+
+New Cake Order
+------------------------
+Customer Name: ${name}
+Phone Number: ${phone}
+Cake Type: ${cake}
+Pickup/Delivery Date: ${date}
+
+Cake Details:
+${details}`;
+
+    /* WHATSAPP */
+
+    const whatsappURL =
+`https://wa.me/94766255747?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappURL, "_blank");
+});
+</script>
 
 </div>
 </header>
@@ -643,32 +673,25 @@ class="order-btn">Order Now</a>
 
 <div class="order-container">
 
-<form>
+<form action="https://formsubmit.co/byamabaked@gmail.com" method="POST">
 
-<form action="mailto:byamabaked@gmail.com" method="POST" enctype="text/plain">
+<input type="text" placeholder="Customer Name" required>
 
-<input type="text" name="Customer Name" placeholder="Customer Name" required>
+<input type="tel" placeholder="Phone Number" required>
 
-<input type="tel" name="Phone Number" placeholder="Phone Number" required>
-
-<select name="Cake Type" required>
+<select required>
 <option>Select Cake Type</option>
 <option>Chocolate Cake</option>
 <option>Cupcake</option>
-<option>Butter Cake</option>
+<option>Wedding Cake</option>
 <option>Cheesecake</option>
 <option>Ribbon Cake</option>
-<option>Red velvet Cake</option>
-<option>Chocolate Brownies<option>
 <option>Custom Cake</option>
 </select>
 
-<input type="date" name="Delivery Date" required>
+<input type="date" required>
 
-<textarea
-name="Cake Details"
-placeholder="Cake details, colors, message, design etc..."
-></textarea>
+<textarea placeholder="Cake details, size, message, design, colors etc..."></textarea>
 
 <button class="submit-btn">
 Submit Order
