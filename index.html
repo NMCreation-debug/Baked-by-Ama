@@ -382,7 +382,7 @@ display:none;
 
 </style>
 </head>
-
+<script>
 <body>
 
 <!-- NAVBAR -->
@@ -486,6 +486,41 @@ Whatsapp Order
 
 </section>
 
+<!-- ================= REPLACE YOUR ADMIN SECTION WITH THIS ================= -->
+
+<section class="admin-panel" id="admin">
+
+<div class="section-title">
+<h2>Business Statistics</h2>
+<p>Live sales and order information</p>
+</div>
+
+<div class="dashboard">
+
+<div class="dashboard-card">
+<h3 id="totalOrders">0</h3>
+<p>Total Orders</p>
+</div>
+
+<div class="dashboard-card">
+<h3 id="totalSales">Rs. 0</h3>
+<p>Total Sales</p>
+</div>
+
+<div class="dashboard-card">
+<h3 id="pendingOrders">0</h3>
+<p>Pending Orders</p>
+</div>
+
+<div class="dashboard-card">
+<h3>5★</h3>
+<p>Customer Rating</p>
+</div>
+
+</div>
+
+</section>
+  
 <!-- CAKES -->
 
 <section id="cakes">
@@ -708,138 +743,162 @@ Whatsapp Orders Available
 
 <script>
 
-/* REAL WHATSAPP ORDER SYSTEM */
+/* ================= ORDER SYSTEM ================= */
 
-const form = document.getElementById("orderForm");
-
-const totalOrders =
-document.querySelectorAll(".dashboard-card h3")[0];
-
-const completedOrders =
-document.querySelectorAll(".dashboard-card h3")[1];
-
-const pendingOrders =
-document.querySelectorAll(".dashboard-card h3")[2];
+const orderForm = document.getElementById('orderForm');
 
 /* LOAD ORDERS */
 
-let orders =
-JSON.parse(localStorage.getItem("orders")) || [];
-
-updateDashboard();
-
-/* FORM SUBMIT */
-
-form.addEventListener("submit", function(e){
-
-e.preventDefault();
-
-const name =
-document.getElementById("name").value;
-
-const phone =
-document.getElementById("phone").value;
-
-const email =
-document.getElementById("email").value;
-
-const date =
-document.getElementById("date").value;
-
-const details =
-document.getElementById("details").value;
-
-const cake1 =
-document.getElementById("cake1").value;
-
-const cake2 =
-document.getElementById("cake2").value;
-
-const cake3 =
-document.getElementById("cake3").value;
-
-/* MULTIPLE CAKES */
-
-let cakes = [];
-
-if(cake1 !== "") cakes.push(cake1);
-if(cake2 !== "") cakes.push(cake2);
-if(cake3 !== "") cakes.push(cake3);
-
-/* SAVE ORDER */
-
-const order = {
-name,
-phone,
-email,
-date,
-cakes,
-details
-};
-
-orders.push(order);
-
-localStorage.setItem(
-"orders",
-JSON.stringify(orders)
-);
-
-updateDashboard();
-
-/* WHATSAPP MESSAGE */
-
-const message =
-`🎂 *NEW ORDER - BAKED BY AMA* 🎂
-
-👤 Customer Name:
-${name}
-
-📞 Phone Number:
-${phone}
-
-📧 Email:
-${email}
-
-📅 Required Date:
-${date}
-
-🍰 Cakes Ordered:
-${cakes.join(", ")}
-
-📝 Cake Details:
-${details}
-
-✨ Thank you for ordering from Baked By Ama!`;
-
-/* WHATSAPP URL */
-
-const whatsappURL =
-`https://wa.me/94766255747?text=${encodeURIComponent(message)}`;
-
-/* OPEN WHATSAPP */
-
-window.open(whatsappURL, "_blank");
-
-/* RESET FORM */
-
-form.reset();
-
-});
+let orders = JSON.parse(localStorage.getItem('orders')) || [];
 
 /* UPDATE DASHBOARD */
 
 function updateDashboard(){
 
-totalOrders.innerHTML = orders.length;
+document.getElementById('totalOrders').innerText =
+orders.length;
 
-completedOrders.innerHTML = "0";
+document.getElementById('pendingOrders').innerText =
+orders.length;
 
-pendingOrders.innerHTML = orders.length;
+/* CALCULATE SALES */
+
+let sales = 0;
+
+orders.forEach(order=>{
+sales += Number(order.price);
+});
+
+document.getElementById('totalSales').innerText =
+"Rs. " + sales.toLocaleString();
+
+}
+
+updateDashboard();
+
+/* SUBMIT ORDER */
+
+orderForm.addEventListener('submit', function(e){
+
+e.preventDefault();
+
+/* GET VALUES */
+
+let name =
+document.getElementById('name').value;
+
+let phone =
+document.getElementById('phone').value;
+
+let email =
+document.getElementById('email').value;
+
+let date =
+document.getElementById('date').value;
+
+let cakeSelect =
+document.getElementById('cake');
+
+let cakeName =
+cakeSelect.options[cakeSelect.selectedIndex].text;
+
+let cakePrice =
+cakeSelect.value;
+
+let details =
+document.getElementById('details').value;
+
+/* SAVE ORDER */
+
+let order = {
+
+name:name,
+phone:phone,
+email:email,
+date:date,
+cake:cakeName,
+price:cakePrice,
+details:details
+
+};
+
+orders.push(order);
+
+localStorage.setItem(
+'orders',
+JSON.stringify(orders)
+);
+
+/* UPDATE DASHBOARD */
+
+updateDashboard();
+
+/* WHATSAPP MESSAGE */
+
+let message =
+
+`🎂 *NEW ORDER - BAKED BY AMA* 🎂
+
+👤 Name: ${name}
+
+📞 Phone: ${phone}
+
+📧 Email: ${email}
+
+📅 Delivery Date: ${date}
+
+🍰 Cake:
+${cakeName}
+
+💰 Price:
+Rs. ${cakePrice}
+
+📝 Details:
+${details}`;
+
+/* SEND TO WHATSAPP */
+
+let whatsappURL =
+`https://wa.me/94766255747?text=${encodeURIComponent(message)}`;
+
+window.open(whatsappURL, '_blank');
+
+/* RESET */
+
+orderForm.reset();
+
+});
+
+/* ================= FIXES ================= */
+
+/* REMOVE DUPLICATE FORM ERROR */
+
+const oldForm = document.querySelector('form[action]');
+
+if(oldForm){
+
+oldForm.removeAttribute('action');
+
+}
+
+/* MOBILE MENU FIX */
+
+const menuBtn =
+document.getElementById('menuBtn');
+
+if(menuBtn){
+
+menuBtn.onclick = ()=>{
+
+document.querySelector('.nav-links')
+.classList.toggle('active');
+
+};
 
 }
 
 </script>
-
+  
 <!DOCTYPE html>
 <html lang="en">
 
