@@ -409,6 +409,9 @@ alt="Baked By Ama Logo">
 <a href="#contact">Contact</a>
 </div>
 
+<a href="admin.html" class="whatsapp-btn">
+Admin Login
+
 </div>
 
 </header>
@@ -588,70 +591,45 @@ Whatsapp Order
 
 <div class="section-title">
 <h2>Place Your Luxury Order</h2>
-<p>All order details will be sent directly to WhatsApp.</p>
+<p>Orders are saved automatically and sent to WhatsApp.</p>
 </div>
 
 <div class="order-container">
 
 <form id="orderForm">
 
-<input type="text"
-id="name"
-placeholder="Customer Name"
-required>
+<input type="text" id="name" placeholder="Customer Name" required>
 
-<input type="tel"
-id="phone"
-placeholder="Phone Number"
-required>
+<input type="tel" id="phone" placeholder="Phone Number" required>
 
-<input type="email"
-id="email"
-placeholder="Email Address"
-required>
+<input type="email" id="email" placeholder="Email Address" required>
 
-<input type="date"
-id="date"
-required>
+<input type="date" id="date" required>
 
-<select id="cake1" required>
-<option value="">Choose First Cake</option>
-<option>Chocolate Cake</option>
-<option>Cupcake</option>
-<option>Brownie</option>
-<option>Red Velvet Cake</option>
-<option>Butter Cake</option>
-<option>Cheesecake</option>
-<option>Ribbon Cake</option>
-<option>Custom Cake</option>
-</select>
+<select id="cake" required>
 
-<select id="cake2">
-<option value="">Choose Second Cake (Optional)</option>
-<option>Chocolate Cake</option>
-<option>Cupcake</option>
-<option>Brownie</option>
-<option>Red Velvet Cake</option>
-<option>Butter Cake</option>
-<option>Cheesecake</option>
-<option>Ribbon Cake</option>
-<option>Custom Cake</option>
-</select>
+<option value="">Select Cake Type</option>
 
-<select id="cake3">
-<option value="">Choose Third Cake (Optional)</option>
-<option>Chocolate Cake</option>
-<option>Cupcake</option>
-<option>Brownie</option>
-<option>Red Velvet Cake</option>
-<option>Butter Cake</option>
-<option>Cheesecake</option>
-<option>Ribbon Cake</option>
-<option>Custom Cake</option>
+<option value="5000">Chocolate Cake - Rs. 5,000</option>
+
+<option value="180">Cupcake - Rs. 180</option>
+
+<option value="269">Brownie - Rs. 269</option>
+
+<option value="5900">Red Velvet Cake - Rs. 5,900</option>
+
+<option value="4500">Butter Cake - Rs. 4,500</option>
+
+<option value="3500">Cheesecake - Rs. 3,500</option>
+
+<option value="4500">Ribbon Cake - Rs. 4,500</option>
+
+<option value="4000">Custom Cake - Starting Rs. 4,000</option>
+
 </select>
 
 <textarea id="details"
-placeholder="Cake details, colors, message, theme etc..."></textarea>
+placeholder="Cake design, colors, size, message etc..."></textarea>
 
 <button type="submit" class="submit-btn">
 Submit Order
