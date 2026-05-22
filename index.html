@@ -802,5 +802,246 @@ Whatsapp Orders Available
 
 </footer>
 
+<!-- ================= ORDER SECTION ================= -->
+
+<section id="order">
+
+<div class="section-title">
+<h2>Place Your Luxury Order</h2>
+<p>All order details will be sent directly to WhatsApp.</p>
+</div>
+
+<div class="order-box">
+
+<form id="orderForm">
+
+<input type="text" id="name" placeholder="Your Full Name" required>
+
+<input type="tel" id="phone" placeholder="Phone Number" required>
+
+<input type="email" id="email" placeholder="Your Email" required>
+
+<input type="date" id="date" required>
+
+<select id="cake1" required>
+<option value="">Choose First Cake</option>
+<option>Chocolate Cake</option>
+<option>Cupcake</option>
+<option>Brownie</option>
+<option>Red Velvet Cake</option>
+<option>Butter Cake</option>
+<option>Cheesecake</option>
+<option>Ribbon Cake</option>
+<option>Custom Cake</option>
+</select>
+
+<select id="cake2">
+<option value="">Choose Second Cake (Optional)</option>
+<option>Chocolate Cake</option>
+<option>Cupcake</option>
+<option>Brownie</option>
+<option>Red Velvet Cake</option>
+<option>Butter Cake</option>
+<option>Cheesecake</option>
+<option>Ribbon Cake</option>
+<option>Custom Cake</option>
+</select>
+
+<select id="cake3">
+<option value="">Choose Third Cake (Optional)</option>
+<option>Chocolate Cake</option>
+<option>Cupcake</option>
+<option>Brownie</option>
+<option>Red Velvet Cake</option>
+<option>Butter Cake</option>
+<option>Cheesecake</option>
+<option>Ribbon Cake</option>
+<option>Custom Cake</option>
+</select>
+
+<textarea id="details" placeholder="Custom design details, colors, writing on cake, size, theme etc..."></textarea>
+
+<button type="submit" class="btn gold-btn">
+Submit Luxury Order
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- ================= ADMIN DASHBOARD ================= -->
+
+<section id="dashboard">
+
+<div class="section-title">
+<h2>Admin Dashboard</h2>
+<p>Real customer orders saved automatically.</p>
+</div>
+
+<div class="admin-box">
+
+<table>
+
+<thead>
+<tr>
+<th>Name</th>
+<th>Phone</th>
+<th>Email</th>
+<th>Date</th>
+<th>Cakes</th>
+<th>Details</th>
+</tr>
+</thead>
+
+<tbody id="ordersTable">
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- ================= SCRIPT ================= -->
+
+<script>
+
+/* LOADER */
+
+window.addEventListener('load', ()=>{
+
+setTimeout(()=>{
+document.getElementById('loader').style.display='none';
+},2000);
+
+});
+
+/* MOBILE MENU */
+
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+
+menuBtn.onclick = ()=>{
+navLinks.classList.toggle('active');
+};
+
+/* REAL ORDER SYSTEM */
+
+const form = document.getElementById('orderForm');
+const ordersTable = document.getElementById('ordersTable');
+
+/* LOAD SAVED ORDERS */
+
+let orders = JSON.parse(localStorage.getItem('orders')) || [];
+
+/* DISPLAY ORDERS */
+
+function displayOrders(){
+
+ordersTable.innerHTML='';
+
+orders.forEach(order=>{
+
+ordersTable.innerHTML += `
+
+<tr>
+<td>${order.name}</td>
+<td>${order.phone}</td>
+<td>${order.email}</td>
+<td>${order.date}</td>
+<td>${order.cakes.join(', ')}</td>
+<td>${order.details}</td>
+</tr>
+
+`;
+
+});
+
+}
+
+displayOrders();
+
+/* SUBMIT ORDER */
+
+form.addEventListener('submit', function(e){
+
+e.preventDefault();
+
+/* GET VALUES */
+
+let name = document.getElementById('name').value;
+let phone = document.getElementById('phone').value;
+let email = document.getElementById('email').value;
+let date = document.getElementById('date').value;
+
+let cake1 = document.getElementById('cake1').value;
+let cake2 = document.getElementById('cake2').value;
+let cake3 = document.getElementById('cake3').value;
+
+let details = document.getElementById('details').value;
+
+/* MULTIPLE CAKES */
+
+let cakes = [];
+
+if(cake1 !== "") cakes.push(cake1);
+if(cake2 !== "") cakes.push(cake2);
+if(cake3 !== "") cakes.push(cake3);
+
+/* SAVE ORDER */
+
+let order = {
+name,
+phone,
+email,
+date,
+cakes,
+details
+};
+
+orders.push(order);
+
+localStorage.setItem('orders', JSON.stringify(orders));
+
+displayOrders();
+
+/* WHATSAPP MESSAGE */
+
+let message =
+`🎂 *NEW ORDER - BAKED BY AMA* 🎂
+
+👤 Name: ${name}
+
+📞 Phone: ${phone}
+
+📧 Email: ${email}
+
+📅 Order Date: ${date}
+
+🍰 Cakes Ordered:
+${cakes.join('\n')}
+
+📝 Custom Details:
+${details}
+
+✨ Thank you for ordering from Baked By Ama!`;
+
+/* SEND TO WHATSAPP */
+
+let whatsappURL =
+`https://wa.me/94766255747?text=${encodeURIComponent(message)}`;
+
+window.open(whatsappURL,'_blank');
+
+/* RESET FORM */
+
+form.reset();
+
+});
+
+</script>    
+
 </body>
 </html>
