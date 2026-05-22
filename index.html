@@ -1,417 +1,409 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
 <title>Baked By Ama | Luxury Cake Boutique</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
 <style>
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
-    font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+font-family:'Poppins',sans-serif;
 }
 
 body{
-    background:#050505;
-    color:white;
+background:#050505;
+color:white;
+overflow-x:hidden;
 }
 
 /* NAVBAR */
 
 header{
-    width:100%;
-    position:fixed;
-    top:0;
-    z-index:999;
-    background:rgba(0,0,0,0.85);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid rgba(212,175,55,0.2);
+width:100%;
+position:fixed;
+top:0;
+z-index:999;
+background:rgba(0,0,0,0.85);
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(212,175,55,0.2);
 }
 
 .navbar{
-    width:90%;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 0;
+width:90%;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 0;
 }
 
 .logo{
-    display:flex;
-    align-items:center;
-    gap:12px;
+display:flex;
+align-items:center;
+gap:12px;
 }
 
 .logo img{
-    width:85px;
-    height:85px;
-    object-fit:contain;
-    border:1px solid #d4af37;
-    padding:5px;
-    background:black;
+width:75px;
+height:75px;
+object-fit:contain;
+border:1px solid #d4af37;
+padding:5px;
+background:black;
+border-radius:12px;
 }
 
 .logo h2{
-    color:#d4af37;
-    font-size:28px;
-    letter-spacing:2px;
+color:#d4af37;
+font-size:28px;
+letter-spacing:2px;
 }
 
 .nav-links{
-    display:flex;
-    gap:35px;
+display:flex;
+gap:35px;
 }
 
 .nav-links a{
-    color:white;
-    text-decoration:none;
-    font-size:17px;
-    transition:0.3s;
+color:white;
+text-decoration:none;
+transition:0.3s;
+font-size:17px;
 }
 
 .nav-links a:hover{
-    color:#d4af37;
-}
-
-.whatsapp-btn{
-    background:transparent;
-    border:1px solid #d4af37;
-    color:#d4af37;
-    padding:12px 22px;
-    border-radius:8px;
-    text-decoration:none;
-    transition:0.3s;
-    font-weight:600;
-}
-
-.whatsapp-btn:hover{
-    background:#d4af37;
-    color:black;
+color:#d4af37;
 }
 
 /* HERO */
 
 .hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:140px 8%;
-    background:
-    linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.4)),
-    url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1600&auto=format&fit=crop');
-    background-size:cover;
-    background-position:center;
+min-height:100vh;
+display:flex;
+align-items:center;
+padding:140px 8%;
+background:
+linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.4)),
+url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1600&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
 }
 
 .hero-text{
-    max-width:600px;
+max-width:650px;
 }
 
 .hero-text h4{
-    color:#d4af37;
-    letter-spacing:3px;
-    margin-bottom:15px;
+color:#d4af37;
+letter-spacing:3px;
+margin-bottom:15px;
 }
 
 .hero-text h1{
-    font-size:75px;
-    line-height:1.1;
-    margin-bottom:20px;
+font-size:75px;
+line-height:1.1;
+margin-bottom:20px;
 }
 
 .hero-text span{
-    color:#d4af37;
+color:#d4af37;
 }
 
 .hero-text p{
-    font-size:20px;
-    color:#ddd;
-    line-height:1.7;
-    margin-bottom:35px;
+font-size:20px;
+line-height:1.7;
+color:#ddd;
+margin-bottom:35px;
 }
 
 .hero-buttons{
-    display:flex;
-    gap:20px;
-    flex-wrap:wrap;
+display:flex;
+gap:20px;
+flex-wrap:wrap;
 }
 
 .btn{
-    padding:14px 28px;
-    border-radius:10px;
-    text-decoration:none;
-    font-weight:600;
-    transition:0.3s;
+padding:14px 28px;
+border-radius:10px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+display:inline-block;
 }
 
 .gold-btn{
-    background:#d4af37;
-    color:black;
+background:#d4af37;
+color:black;
 }
 
 .gold-btn:hover{
-    transform:translateY(-3px);
+transform:translateY(-4px);
 }
 
 .dark-btn{
-    border:1px solid #d4af37;
-    color:#d4af37;
+border:1px solid #d4af37;
+color:#d4af37;
 }
 
 .dark-btn:hover{
-    background:#d4af37;
-    color:black;
+background:#d4af37;
+color:black;
 }
 
 /* SECTION */
 
 section{
-    padding:90px 8%;
+padding:90px 8%;
 }
 
 .section-title{
-    text-align:center;
-    margin-bottom:55px;
+text-align:center;
+margin-bottom:55px;
 }
 
 .section-title h2{
-    color:#d4af37;
-    font-size:48px;
-    margin-bottom:12px;
+font-size:48px;
+color:#d4af37;
+margin-bottom:10px;
 }
 
 .section-title p{
-    color:#bbb;
+color:#bbb;
 }
 
 /* FEATURES */
 
 .features{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:25px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
 }
 
 .feature-box{
-    border:1px solid rgba(212,175,55,0.3);
-    padding:30px;
-    border-radius:18px;
-    text-align:center;
-    background:#0d0d0d;
-    transition:0.3s;
+background:#0d0d0d;
+padding:30px;
+border-radius:20px;
+text-align:center;
+border:1px solid rgba(212,175,55,0.2);
+transition:0.3s;
 }
 
 .feature-box:hover{
-    transform:translateY(-6px);
-    border-color:#d4af37;
+transform:translateY(-7px);
+border-color:#d4af37;
 }
 
 .feature-box i{
-    color:#d4af37;
-    font-size:40px;
-    margin-bottom:15px;
+font-size:42px;
+color:#d4af37;
+margin-bottom:15px;
 }
 
 /* CAKES */
 
 .cake-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
 }
 
 .cake-card{
-    background:#0c0c0c;
-    border-radius:20px;
-    overflow:hidden;
-    border:1px solid rgba(212,175,55,0.2);
-    transition:0.4s;
+background:#0c0c0c;
+border-radius:20px;
+overflow:hidden;
+border:1px solid rgba(212,175,55,0.2);
+transition:0.4s;
 }
 
 .cake-card:hover{
-    transform:translateY(-10px);
-    border-color:#d4af37;
+transform:translateY(-10px);
+border-color:#d4af37;
 }
 
 .cake-card img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
+width:100%;
+height:250px;
+object-fit:cover;
 }
 
 .cake-content{
-    padding:25px;
-    text-align:center;
+padding:25px;
+text-align:center;
 }
 
 .cake-content h3{
-    margin-bottom:10px;
-    color:#fff;
+margin-bottom:10px;
 }
 
 .price{
-    color:#d4af37;
-    font-size:28px;
-    margin:12px 0;
-    font-weight:bold;
+font-size:28px;
+font-weight:bold;
+color:#d4af37;
+margin:12px 0;
 }
 
 .order-btn{
-    display:inline-block;
-    margin-top:12px;
-    padding:12px 24px;
-    background:#d4af37;
-    color:black;
-    text-decoration:none;
-    border-radius:8px;
-    font-weight:600;
+display:inline-block;
+padding:12px 24px;
+background:#d4af37;
+color:black;
+text-decoration:none;
+border-radius:8px;
+font-weight:600;
+margin-top:10px;
 }
 
 /* ORDER FORM */
 
 .order-section{
-    background:#0d0d0d;
+background:#0d0d0d;
 }
 
 .order-container{
-    max-width:850px;
-    margin:auto;
-    background:#121212;
-    padding:45px;
-    border-radius:20px;
-    border:1px solid rgba(212,175,55,0.3);
+max-width:850px;
+margin:auto;
+background:#121212;
+padding:45px;
+border-radius:20px;
+border:1px solid rgba(212,175,55,0.3);
 }
 
 form{
-    display:grid;
-    gap:20px;
+display:grid;
+gap:20px;
 }
 
-input, textarea, select{
-    width:100%;
-    padding:16px;
-    background:#1a1a1a;
-    border:1px solid #333;
-    border-radius:10px;
-    color:white;
-    font-size:16px;
+input,
+textarea,
+select{
+width:100%;
+padding:16px;
+background:#1a1a1a;
+border:1px solid #333;
+border-radius:10px;
+color:white;
+font-size:16px;
 }
 
 textarea{
-    resize:none;
-    height:150px;
+height:150px;
+resize:none;
 }
 
 .submit-btn{
-    background:#d4af37;
-    border:none;
-    color:black;
-    padding:16px;
-    border-radius:10px;
-    font-size:18px;
-    font-weight:bold;
-    cursor:pointer;
+background:#d4af37;
+color:black;
+border:none;
+padding:16px;
+font-size:18px;
+font-weight:bold;
+border-radius:10px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.submit-btn:hover{
+opacity:0.9;
 }
 
 /* REVIEWS */
 
 .review-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:25px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
 }
 
 .review-card{
-    background:#0d0d0d;
-    border-radius:18px;
-    padding:30px;
-    border:1px solid rgba(212,175,55,0.2);
+background:#0d0d0d;
+padding:30px;
+border-radius:20px;
+border:1px solid rgba(212,175,55,0.2);
 }
 
 .stars{
-    color:#d4af37;
-    margin-bottom:15px;
+color:#d4af37;
+margin-bottom:15px;
 }
 
 .review-card h4{
-    margin-top:15px;
-    color:#d4af37;
+margin-top:15px;
+color:#d4af37;
 }
 
-/* ADMIN */
+/* DASHBOARD */
 
 .admin-panel{
-    background:#111;
+background:#111;
 }
 
 .dashboard{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:25px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
 }
 
 .dashboard-card{
-    background:#0d0d0d;
-    padding:35px;
-    border-radius:20px;
-    border:1px solid rgba(212,175,55,0.2);
-    text-align:center;
+background:#0d0d0d;
+padding:35px;
+border-radius:20px;
+text-align:center;
+border:1px solid rgba(212,175,55,0.2);
 }
 
 .dashboard-card h3{
-    color:#d4af37;
-    font-size:40px;
-    margin-bottom:10px;
+font-size:40px;
+color:#d4af37;
+margin-bottom:10px;
 }
 
 /* FOOTER */
 
 footer{
-    background:black;
-    padding:45px 8%;
-    text-align:center;
-    border-top:1px solid rgba(212,175,55,0.2);
+background:black;
+padding:45px 8%;
+text-align:center;
+border-top:1px solid rgba(212,175,55,0.2);
 }
 
 footer h3{
-    color:#d4af37;
-    margin-bottom:15px;
+color:#d4af37;
+margin-bottom:15px;
 }
 
 footer p{
-    color:#bbb;
-    margin:8px 0;
+color:#bbb;
+margin:8px 0;
 }
 
-/* RESPONSIVE */
+/* MOBILE */
 
 @media(max-width:900px){
 
 .hero{
-    flex-direction:column;
-    text-align:center;
+text-align:center;
 }
 
 .hero-text h1{
-    font-size:52px;
+font-size:52px;
 }
 
 .nav-links{
-    display:none;
-}
-
-.logo h2{
-    font-size:20px;
+display:none;
 }
 
 }
+
 </style>
 </head>
 
@@ -420,12 +412,13 @@ footer p{
 <!-- NAVBAR -->
 
 <header>
+
 <div class="navbar">
 
 <div class="logo">
 
-<!-- ADD YOUR LOGO IMAGE HERE -->
-<img src="ChatGPT Image May 20, 2026, 03_35_19 PM.png" alt="Baked By Ama Logo" style="height:70px; width:auto; object-fit:contain;">
+<img src="ChatGPT Image May 20, 2026, 03_35_19 PM.png"
+alt="Baked By Ama Logo">
 
 <h2>BAKED BY AMA</h2>
 
@@ -440,43 +433,8 @@ footer p{
 <a href="#contact">Contact</a>
 </div>
 
-<!-- ADD THIS RIGHT BEFORE </body> -->
-
-<script>
-const form = document.querySelector("form");
-
-form.addEventListener("submit", function(e){
-    e.preventDefault();
-
-    const name = form.querySelector('input[type="text"]').value;
-    const phone = form.querySelector('input[type="tel"]').value;
-    const cake = form.querySelector('select').value;
-    const date = form.querySelector('input[type="date"]').value;
-    const details = form.querySelector('textarea').value;
-
-    const message =
-`Hello Baked By Ama!
-
-New Cake Order
-------------------------
-Customer Name: ${name}
-Phone Number: ${phone}
-Cake Type: ${cake}
-Pickup/Delivery Date: ${date}
-
-Cake Details:
-${details}`;
-
-    /* WHATSAPP */
-
-    const whatsappURL =
-`https://wa.me/94766255747?text=${encodeURIComponent(message)}`;
-
-    window.open(whatsappURL, "_blank");
-});
-</script>
-
 </div>
+
 </header>
 
 <!-- HERO -->
@@ -536,7 +494,7 @@ Whatsapp Order
 <div class="feature-box">
 <i class="fa-solid fa-truck"></i>
 <h3>On Time Delivery</h3>
-<p>Pick me FLASH.</p>
+<p>Islandwide delivery available.</p>
 </div>
 
 <div class="feature-box">
@@ -560,268 +518,125 @@ Whatsapp Order
 
 <div class="cake-grid">
 
-<!-- 1 -->
+<!-- Chocolate -->
 
 <div class="cake-card">
 <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1200&auto=format&fit=crop">
+
 <div class="cake-content">
 <h3>Chocolate Cake</h3>
-<p>1KG:Rich luxury chocolate layers.</p>
+<p>1KG: Rich luxury chocolate layers.</p>
 <div class="price">Rs. 5,000</div>
-<a href="https://wa.me/94766255747?text=I%20want%20to%20order%20Chocolate%20Cake"
-class="order-btn">Order Now</a>
-</div>
+<a href="#order" class="order-btn">Order Now</a>
 </div>
 
-<!-- 2 -->
+</div>
+
+<!-- Cupcake -->
 
 <div class="cake-card">
 <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?q=80&w=1200&auto=format&fit=crop">
+
 <div class="cake-content">
 <h3>Cupcake</h3>
-<p>1 cup-cake:Soft cupcakes with premium frosting.</p>
+<p>Soft cupcakes with premium frosting.</p>
 <div class="price">Rs. 180</div>
-<a href="https://wa.me/94766255747?text=I%20want%20to%20order%20Cupcake"
-class="order-btn">Order Now</a>
-</div>
+<a href="#order" class="order-btn">Order Now</a>
 </div>
 
+</div>
+
+<!-- Brownie -->
+
 <div class="cake-card">
-<img src="https://images.unsplash.com/photo-1515037893149-de7f840978e2?q=80&w=694&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+<img src="https://images.unsplash.com/photo-1515037893149-de7f840978e2?q=80&w=694&auto=format&fit=crop">
+
 <div class="cake-content">
 <h3>Brownie</h3>
-<p>1 piece:Rich layered with chocolate chip mealting.</p>
+<p>Rich layered brownie with chocolate chips.</p>
 <div class="price">Rs. 269</div>
-<a href="https://wa.me/94766255747?text=I%20want%20to%20order%20Chocolate%20Cake"
-class="order-btn">Order Now</a>
-</div>
+<a href="#order" class="order-btn">Order Now</a>
 </div>
 
+</div>
+
+<!-- Red Velvet -->
+
 <div class="cake-card">
-<img src="https://images.unsplash.com/photo-1586788680434-30d324b2d46f?q=80&w=951&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+<img src="https://images.unsplash.com/photo-1586788680434-30d324b2d46f?q=80&w=951&auto=format&fit=crop">
+
 <div class="cake-content">
-<h3>Red Velvert Cake</h3>
-<p>1KG:A rich and moist red velvet cake with a smooth cream cheese frosting.</p>
+<h3>Red Velvet Cake</h3>
+<p>Moist red velvet with cream cheese frosting.</p>
 <div class="price">Rs. 5,900</div>
-<a href="https://wa.me/94766255747?text=I%20want%20to%20order%20Cheesecake"
-class="order-btn">Order Now</a>
+<a href="#order" class="order-btn">Order Now</a>
 </div>
+
 </div>
+
+<!-- Butter -->
 
 <div class="cake-card">
-<img src="https://plus.unsplash.com/premium_photo-1664391788731-8b6b992dc042?q=80&w=760&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+<img src="https://plus.unsplash.com/premium_photo-1664391788731-8b6b992dc042?q=80&w=760&auto=format&fit=crop">
+
 <div class="cake-content">
-<h3>Butter cake with icing(Full Coverd)</h3>
-<p>1kG:Smooth buttery layer with creamy icing.</p>
+<h3>Butter Cake</h3>
+<p>Smooth buttery layers with creamy icing.</p>
 <div class="price">Rs. 4,500</div>
-<a href="https://wa.me/94766255747?text=I%20want%20to%20order%20Cheesecake"
-class="order-btn">Order Now</a>
-</div>
+<a href="#order" class="order-btn">Order Now</a>
 </div>
 
-<!-- 4 -->
+</div>
+
+<!-- Cheesecake -->
 
 <div class="cake-card">
 <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?q=80&w=1200&auto=format&fit=crop">
+
 <div class="cake-content">
 <h3>Cheesecake</h3>
-<p>500G:Creamy soft cheesecake with toppings.</p>
+<p>500G creamy soft cheesecake with toppings.</p>
 <div class="price">Rs. 3,500</div>
-<a href="https://wa.me/94766255747?text=I%20want%20to%20order%20Cheesecake"
-class="order-btn">Order Now</a>
-</div>
+<a href="#order" class="order-btn">Order Now</a>
 </div>
 
-<!-- 5 -->
-
-<div class="cake-card">
-<img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?q=80&w=1200&auto=format&fit=crop"">
-<div class="cake-content">
-<h3>Ribbon Cake</h3>
-<p>1Kg:Beautiful colorful ribbon cake design.</p>
-<div class="price">Rs. 4,500</div>
-<a href="https://wa.me/94766255747?text=I%20want%20to%20order%20Ribbon%20Cake"
-class="order-btn">Order Now</a>
-</div>
-</div>
-
-<!-- 6 -->
-
-<div class="cake-card">
-<img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?q=80&w=1200&auto=format&fit=crop">
-<div class="cake-content">
-<h3>Custom Cake</h3>
-<p>1KG:Customized cakes for every occasion.</p>
-<div class="price"> Starting at Rs. 4,000</div>
-<a href="https://wa.me/94766255747?text=I%20want%20to%20order%20Custom%20Cake"
-class="order-btn">Order Now</a>
-</div>
 </div>
 
 </div>
 
 </section>
 
-<!-- ORDER -->
+<!-- ORDER SECTION -->
 
 <section class="order-section" id="order">
-
-<div class="section-title">
-<h2>Place Your Order</h2>
-<p>No online payment required. Orders confirmed through Whatsapp.</p>
-</div>
-
-<div class="order-container">
-
-<form action="https://formsubmit.co/byamabaked@gmail.com" method="POST">
-
-<input type="text" placeholder="Customer Name" required>
-
-<input type="tel" placeholder="Phone Number" required>
-
-<select required>
-<option>Select Cake Type</option>
-<option>Chocolate Cake</option>
-<option>Cupcake</option>
-<option>Wedding Cake</option>
-<option>Cheesecake</option>
-<option>Ribbon Cake</option>
-<option>Custom Cake</option>
-</select>
-
-<input type="date" required>
-
-<textarea placeholder="Cake details, size, message, design, colors etc..."></textarea>
-
-<button class="submit-btn">
-Submit Order
-</button>
-
-</form>
-
-</div>
-
-</section>
-
-<!-- REVIEWS -->
-
-<section id="reviews">
-
-<div class="section-title">
-<h2>Customer Reviews</h2>
-<p>What our happy customers say</p>
-</div>
-
-<div class="review-grid">
-
-<div class="review-card">
-<div class="stars">★★★★★</div>
-<p>
-Absolutely amazing cake! The design was beautiful
-and the taste was perfect.
-</p>
-<h4>— Tharushi M.</h4>
-</div>
-
-<div class="review-card">
-<div class="stars">★★★★★</div>
-<p>
-Best cake shop in Sri Lanka. Super professional
-and delivered on time.
-</p>
-<h4>— Nimesh K.</h4>
-</div>
-
-<div class="review-card">
-<div class="stars">★★★★</div>
-<p>
-Luxury quality and very soft cakes.
-Highly recommended for birthdays.
-</p>
-<h4>— Sanduni P.</h4>
-</div>
-
-</div>
-
-</section>
-
-<!-- ADMIN DASHBOARD -->
-
-<section class="admin-panel" id="admin">
-
-<div class="section-title">
-<h2>Admin Dashboard</h2>
-<p>Business statistics overview</p>
-</div>
-
-<div class="dashboard">
-
-<div class="dashboard-card">
-<h3>0</h3>
-<p>Total Orders</p>
-</div>
-
-<div class="dashboard-card">
-<h3>0</h3>
-<p>Completed Orders</p>
-</div>
-
-<div class="dashboard-card">
-<h3>0</h3>
-<p>Pending Orders</p>
-</div>
-
-<div class="dashboard-card">
-<h3>4.0★</h3>
-<p>Customer Rating</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- FOOTER -->
-
-<footer id="contact">
-
-<h3>BAKED BY AMA</h3>
-
-<p>Luxury Cakes • Baking Memories That Last Forever</p>
-
-<p>
-<i class="fa-solid fa-phone"></i>
-0766255747
-</p>
-
-<p>
-<i class="fa-brands fa-whatsapp"></i>
-Whatsapp Orders Available
-</p>
-
-<p>Sri Lanka</p>
-
-</footer>
-
-<!-- ================= ORDER SECTION ================= -->
-
-<section id="order">
 
 <div class="section-title">
 <h2>Place Your Luxury Order</h2>
 <p>All order details will be sent directly to WhatsApp.</p>
 </div>
 
-<div class="order-box">
+<div class="order-container">
 
 <form id="orderForm">
 
-<input type="text" id="name" placeholder="Your Full Name" required>
+<input type="text"
+id="name"
+placeholder="Customer Name"
+required>
 
-<input type="tel" id="phone" placeholder="Phone Number" required>
+<input type="tel"
+id="phone"
+placeholder="Phone Number"
+required>
 
-<input type="email" id="email" placeholder="Your Email" required>
+<input type="email"
+id="email"
+placeholder="Email Address"
+required>
 
-<input type="date" id="date" required>
+<input type="date"
+id="date"
+required>
 
 <select id="cake1" required>
 <option value="">Choose First Cake</option>
@@ -859,10 +674,11 @@ Whatsapp Orders Available
 <option>Custom Cake</option>
 </select>
 
-<textarea id="details" placeholder="Custom design details, colors, writing on cake, size, theme etc..."></textarea>
+<textarea id="details"
+placeholder="Cake details, colors, message, theme etc..."></textarea>
 
-<button type="submit" class="btn gold-btn">
-Submit Luxury Order
+<button type="submit" class="submit-btn">
+Submit Order
 </button>
 
 </form>
@@ -871,116 +687,156 @@ Submit Luxury Order
 
 </section>
 
-<!-- ================= ADMIN DASHBOARD ================= -->
+<!-- REVIEWS -->
 
-<section id="dashboard">
+<section id="reviews">
 
 <div class="section-title">
-<h2>Admin Dashboard</h2>
-<p>Real customer orders saved automatically.</p>
+<h2>Customer Reviews</h2>
+<p>What our happy customers say</p>
 </div>
 
-<div class="admin-box">
+<div class="review-grid">
 
-<table>
+<div class="review-card">
+<div class="stars">★★★★★</div>
+<p>
+Absolutely amazing cake! Beautiful design and amazing taste.
+</p>
+<h4>— Tharushi M.</h4>
+</div>
 
-<thead>
-<tr>
-<th>Name</th>
-<th>Phone</th>
-<th>Email</th>
-<th>Date</th>
-<th>Cakes</th>
-<th>Details</th>
-</tr>
-</thead>
+<div class="review-card">
+<div class="stars">★★★★★</div>
+<p>
+Best cake shop in Sri Lanka. Super professional service.
+</p>
+<h4>— Nimesh K.</h4>
+</div>
 
-<tbody id="ordersTable">
-</tbody>
-
-</table>
+<div class="review-card">
+<div class="stars">★★★★</div>
+<p>
+Luxury quality and very soft cakes.
+Highly recommended.
+</p>
+<h4>— Sanduni P.</h4>
+</div>
 
 </div>
 
 </section>
 
-<!-- ================= SCRIPT ================= -->
+<!-- ADMIN -->
+
+<section class="admin-panel" id="admin">
+
+<div class="section-title">
+<h2>Admin Dashboard</h2>
+<p>Business statistics overview</p>
+</div>
+
+<div class="dashboard">
+
+<div class="dashboard-card">
+<h3>0</h3>
+<p>Total Orders</p>
+</div>
+
+<div class="dashboard-card">
+<h3>0</h3>
+<p>Completed Orders</p>
+</div>
+
+<div class="dashboard-card">
+<h3>0</h3>
+<p>Pending Orders</p>
+</div>
+
+<div class="dashboard-card">
+<h3>4.9★</h3>
+<p>Customer Rating</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer id="contact">
+
+<h3>BAKED BY AMA</h3>
+
+<p>Luxury Cakes • Baking Memories That Last Forever</p>
+
+<p>
+<i class="fa-solid fa-phone"></i>
+0766255747
+</p>
+
+<p>
+<i class="fa-brands fa-whatsapp"></i>
+Whatsapp Orders Available
+</p>
+
+<p>Sri Lanka</p>
+
+</footer>
+
+<!-- SCRIPT -->
 
 <script>
 
-/* LOADER */
+/* REAL WHATSAPP ORDER SYSTEM */
 
-window.addEventListener('load', ()=>{
+const form = document.getElementById("orderForm");
 
-setTimeout(()=>{
-document.getElementById('loader').style.display='none';
-},2000);
+const totalOrders =
+document.querySelectorAll(".dashboard-card h3")[0];
 
-});
+const completedOrders =
+document.querySelectorAll(".dashboard-card h3")[1];
 
-/* MOBILE MENU */
+const pendingOrders =
+document.querySelectorAll(".dashboard-card h3")[2];
 
-const menuBtn = document.getElementById('menuBtn');
-const navLinks = document.getElementById('navLinks');
+/* LOAD ORDERS */
 
-menuBtn.onclick = ()=>{
-navLinks.classList.toggle('active');
-};
+let orders =
+JSON.parse(localStorage.getItem("orders")) || [];
 
-/* REAL ORDER SYSTEM */
+updateDashboard();
 
-const form = document.getElementById('orderForm');
-const ordersTable = document.getElementById('ordersTable');
+/* FORM SUBMIT */
 
-/* LOAD SAVED ORDERS */
-
-let orders = JSON.parse(localStorage.getItem('orders')) || [];
-
-/* DISPLAY ORDERS */
-
-function displayOrders(){
-
-ordersTable.innerHTML='';
-
-orders.forEach(order=>{
-
-ordersTable.innerHTML += `
-
-<tr>
-<td>${order.name}</td>
-<td>${order.phone}</td>
-<td>${order.email}</td>
-<td>${order.date}</td>
-<td>${order.cakes.join(', ')}</td>
-<td>${order.details}</td>
-</tr>
-
-`;
-
-});
-
-}
-
-displayOrders();
-
-/* SUBMIT ORDER */
-
-form.addEventListener('submit', function(e){
+form.addEventListener("submit", function(e){
 
 e.preventDefault();
 
-/* GET VALUES */
+const name =
+document.getElementById("name").value;
 
-let name = document.getElementById('name').value;
-let phone = document.getElementById('phone').value;
-let email = document.getElementById('email').value;
-let date = document.getElementById('date').value;
+const phone =
+document.getElementById("phone").value;
 
-let cake1 = document.getElementById('cake1').value;
-let cake2 = document.getElementById('cake2').value;
-let cake3 = document.getElementById('cake3').value;
+const email =
+document.getElementById("email").value;
 
-let details = document.getElementById('details').value;
+const date =
+document.getElementById("date").value;
+
+const details =
+document.getElementById("details").value;
+
+const cake1 =
+document.getElementById("cake1").value;
+
+const cake2 =
+document.getElementById("cake2").value;
+
+const cake3 =
+document.getElementById("cake3").value;
 
 /* MULTIPLE CAKES */
 
@@ -992,7 +848,7 @@ if(cake3 !== "") cakes.push(cake3);
 
 /* SAVE ORDER */
 
-let order = {
+const order = {
 name,
 phone,
 email,
@@ -1003,37 +859,46 @@ details
 
 orders.push(order);
 
-localStorage.setItem('orders', JSON.stringify(orders));
+localStorage.setItem(
+"orders",
+JSON.stringify(orders)
+);
 
-displayOrders();
+updateDashboard();
 
 /* WHATSAPP MESSAGE */
 
-let message =
+const message =
 `🎂 *NEW ORDER - BAKED BY AMA* 🎂
 
-👤 Name: ${name}
+👤 Customer Name:
+${name}
 
-📞 Phone: ${phone}
+📞 Phone Number:
+${phone}
 
-📧 Email: ${email}
+📧 Email:
+${email}
 
-📅 Order Date: ${date}
+📅 Required Date:
+${date}
 
 🍰 Cakes Ordered:
-${cakes.join('\n')}
+${cakes.join(", ")}
 
-📝 Custom Details:
+📝 Cake Details:
 ${details}
 
 ✨ Thank you for ordering from Baked By Ama!`;
 
-/* SEND TO WHATSAPP */
+/* WHATSAPP URL */
 
-let whatsappURL =
+const whatsappURL =
 `https://wa.me/94766255747?text=${encodeURIComponent(message)}`;
 
-window.open(whatsappURL,'_blank');
+/* OPEN WHATSAPP */
+
+window.open(whatsappURL, "_blank");
 
 /* RESET FORM */
 
@@ -1041,7 +906,19 @@ form.reset();
 
 });
 
-</script>    
+/* UPDATE DASHBOARD */
+
+function updateDashboard(){
+
+totalOrders.innerHTML = orders.length;
+
+completedOrders.innerHTML = "0";
+
+pendingOrders.innerHTML = orders.length;
+
+}
+
+</script>
 
 </body>
 </html>
