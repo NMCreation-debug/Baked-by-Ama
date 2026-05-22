@@ -591,7 +591,36 @@ Whatsapp Order
 </div>
 </section>
 
-<section id="admin">
+<!-- PRIVATE ADMIN LOGIN -->
+
+<div id="adminLogin" style="padding:120px 8% 40px; text-align:center;">
+
+<h2 style="color:#d4af37; margin-bottom:20px; font-size:40px;">
+Admin Access
+</h2>
+
+<p style="color:#bbb; margin-bottom:25px;">
+Enter password to access the private dashboard.
+</p>
+
+<input 
+    type="password" 
+    id="adminPassword" 
+    placeholder="Enter Admin Password"
+    style="max-width:400px; margin:auto; display:block;"
+>
+
+<button 
+    onclick="checkAdminPassword()"
+    class="btn gold-btn"
+    style="margin-top:20px;"
+>
+Access Dashboard
+</button>
+
+</div>
+
+<section id="admin" style="display:none;">
 
 <div class="section-title">
 <h2>Admin Dashboard</h2>
@@ -720,6 +749,26 @@ orderForm.addEventListener('submit', function(e){
     orderForm.reset();
 
 });
+
+function checkAdminPassword(){
+
+    const password = document.getElementById('adminPassword').value;
+
+    /* CHANGE PASSWORD HERE */
+
+    if(password === 'Ama.1989.'){
+
+        document.getElementById('admin').style.display = 'block';
+        document.getElementById('adminLogin').style.display = 'none';
+
+        window.location.href = '#admin';
+
+    }else{
+
+        alert('Incorrect Password');
+
+    }
+}
 
 </script>
 
