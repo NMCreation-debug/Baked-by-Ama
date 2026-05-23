@@ -353,44 +353,53 @@ footer p{
     margin:8px 0;
 }
 
-/* LOADER */
+/* ANIMATIONS */
 
-#loader{
-    position:fixed;
-    width:100%;
-    height:100vh;
-    background:#050505;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    z-index:99999;
+.hero-text{
+    animation:fadeUp 1.2s ease;
 }
 
-.spinner{
-    width:80px;
-    height:80px;
-    border:6px solid #222;
-    border-top:6px solid #d4af37;
-    border-radius:50%;
-    animation:spin 1s linear infinite;
-    margin-bottom:20px;
+.cake-card{
+    animation:fadeUp 1s ease;
 }
 
-@keyframes spin{
-    100%{
-        transform:rotate(360deg);
+.feature-box{
+    animation:fadeUp 1s ease;
+}
+
+.review-card{
+    animation:fadeUp 1s ease;
+}
+
+.dashboard-card{
+    animation:fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
     }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
 }
 
-#loader h2{
-    color:#d4af37;
-    letter-spacing:3px;
-    margin-bottom:10px;
+.order-btn,
+.btn,
+.submit-btn{
+    transition:0.3s ease;
 }
 
-#loader p{
-    color:#bbb;
+.order-btn:hover,
+.btn:hover,
+.submit-btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px rgba(212,175,55,0.4);
 }
 
 @media(max-width:900px){
@@ -417,11 +426,7 @@ footer p{
 
 <body>
 
-<!-- LOADER -->
 
-<div id="loader">
-
-<div class="spinner"></div>
 
 <h2>BAKED BY AMA</h2>
 
@@ -433,7 +438,7 @@ footer p{
 <div class="navbar">
 
 <div class="logo">
-<img src="ChatGPT Image May 23, 2026, 08_54_52 AM alt="Baked By Ama Logo">
+<img src="ChatGPT Image May 20, 2026, 03_35_19 PM.png" alt="Baked By Ama Logo">
 <h2>BAKED BY AMA</h2>
 </div>
 
@@ -731,13 +736,7 @@ Access Dashboard
 
 <script>
 
-window.addEventListener('load', ()=>{
 
-    setTimeout(()=>{
-        document.getElementById('loader').style.display='none';
-    },2000);
-
-});
 
 const orderForm = document.getElementById('orderForm');
 const ordersTable = document.getElementById('ordersTable');
@@ -846,7 +845,7 @@ function checkAdminPassword(){
 
     /* CHANGE PASSWORD HERE */
 
-    if(password === 'Ama.1989.'){
+    if(password === 'AmaAdmin2026'){
 
         document.getElementById('admin').style.display = 'block';
         document.getElementById('adminLogin').style.display = 'none';
