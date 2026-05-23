@@ -8,7 +8,7 @@ Replace your current file with this updated version.
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Baked By Ama | Unique Cake Boutique</title>
+<title>Baked By Ama | Luxury Cake Boutique</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -457,7 +457,7 @@ footer p{
 <section class="hero">
 <div class="hero-text">
 
-<h4>BAKED WITH LOVE • Unique CAKES</h4>
+<h4>BAKED WITH LOVE • UNIQUE CAKES</h4>
 
 <h1>
 <span>Baking Memories</span><br>
@@ -466,7 +466,7 @@ That Last Forever
 
 <p>
 Luxury handmade cakes crafted beautifully for birthdays,
-and every special celebration in Sri Lanka.
+weddings and every special celebration in Sri Lanka.
 </p>
 
 <div class="hero-buttons">
@@ -585,7 +585,7 @@ Whatsapp Order
 <section id="order">
 
 <div class="section-title">
-<h2>Place Your Order</h2>
+<h2>Place Your Luxury Order</h2>
 <p>All order details will be sent directly to WhatsApp.</p>
 </div>
 
@@ -736,7 +736,31 @@ Access Dashboard
 
 <script>
 
+/* =========================
+   ADMIN PASSWORD LOGIN
+========================= */
 
+function checkAdminPassword(){
+
+    const password = document.getElementById('adminPassword').value;
+
+    if(password === 'AmaAdmin2026'){
+
+        document.getElementById('admin').style.display = 'block';
+        document.getElementById('adminLogin').style.display = 'none';
+
+        window.location.href = '#admin';
+
+    }else{
+
+        alert('Incorrect Password');
+
+    }
+}
+
+/* =========================
+   ORDER SYSTEM
+========================= */
 
 const orderForm = document.getElementById('orderForm');
 const ordersTable = document.getElementById('ordersTable');
@@ -767,7 +791,11 @@ function displayOrders(){
     document.getElementById('completedOrders').innerText = 0;
 }
 
+/* LOAD ORDERS */
+
 displayOrders();
+
+/* FORM SUBMIT */
 
 orderForm.addEventListener('submit', function(e){
 
@@ -789,7 +817,7 @@ orderForm.addEventListener('submit', function(e){
     displayOrders();
 
     let message =
-`🎂 *NEW ORDER - BAKED BY AMA* 🎂
+`🎂 NEW ORDER - BAKED BY AMA 🎂
 
 👤 Name: ${order.name}
 📞 Phone: ${order.phone}
@@ -805,7 +833,13 @@ orderForm.addEventListener('submit', function(e){
 
     alert('Order Submitted Successfully!');
 
+    orderForm.reset();
+
 });
+
+/* =========================
+   WHATSAPP QUICK ORDER
+========================= */
 
 function orderCake(cakeName){
 
@@ -834,29 +868,6 @@ ${cakeName}`;
 `https://wa.me/94766255747?text=${encodeURIComponent(message)}`;
 
     window.open(whatsappURL, '_blank');
-
-    orderForm.reset();
-
-});
-
-function checkAdminPassword(){
-
-    const password = document.getElementById('adminPassword').value;
-
-    /* CHANGE PASSWORD HERE */
-
-    if(password === 'Ama.1989#'){
-
-        document.getElementById('admin').style.display = 'block';
-        document.getElementById('adminLogin').style.display = 'none';
-
-        window.location.href = '#admin';
-
-    }else{
-
-        alert('Incorrect Password');
-
-    }
 }
 
 </script>
