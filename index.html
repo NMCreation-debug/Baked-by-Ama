@@ -353,6 +353,46 @@ footer p{
     margin:8px 0;
 }
 
+/* LOADER */
+
+#loader{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    background:#050505;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+}
+
+.spinner{
+    width:80px;
+    height:80px;
+    border:6px solid #222;
+    border-top:6px solid #d4af37;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+    margin-bottom:20px;
+}
+
+@keyframes spin{
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+#loader h2{
+    color:#d4af37;
+    letter-spacing:3px;
+    margin-bottom:10px;
+}
+
+#loader p{
+    color:#bbb;
+}
+
 @media(max-width:900px){
 
 .hero{
@@ -377,11 +417,23 @@ footer p{
 
 <body>
 
+<!-- LOADER -->
+
+<div id="loader">
+
+<div class="spinner"></div>
+
+<h2>BAKED BY AMA</h2>
+
+<p>Loading Luxury Experience...</p>
+
+</div>
+
 <header>
 <div class="navbar">
 
 <div class="logo">
-<img src="ChatGPT Image May 20, 2026, 03_35_19 PM.png" alt="Baked By Ama Logo">
+<img src="ChatGPT Image May 23, 2026, 08_54_52 AM alt="Baked By Ama Logo">
 <h2>BAKED BY AMA</h2>
 </div>
 
@@ -468,7 +520,7 @@ Whatsapp Order
 <h3>Chocolate Cake</h3>
 <p>1KG: Rich luxury chocolate layers.</p>
 <div class="price">Rs. 5,000</div>
-<a href="https://wa.me/94766255747?text=I%20want%20to%20order%20Chocolate%20Cake" class="order-btn">Order Now</a>
+<button onclick="orderCake('Chocolate Cake')" class="order-btn">Order Now</button>
 </div>
 </div>
 
@@ -478,7 +530,7 @@ Whatsapp Order
 <h3>Cupcake</h3>
 <p>Soft cupcakes with premium frosting.</p>
 <div class="price">Rs. 180</div>
-<a href="https://wa.me/94766255747?text=I%20want%20to%20order%20Cupcake" class="order-btn">Order Now</a>
+<button onclick="orderCake('Cupcake')" class="order-btn">Order Now</button>
 </div>
 </div>
 
@@ -488,7 +540,7 @@ Whatsapp Order
 <h3>Brownie</h3>
 <p>Rich brownie layered with melting chocolate chips.</p>
 <div class="price">Rs. 269</div>
-<a href="https://wa.me/94766255747?text=I%20want%20to%20order%20Brownie" class="order-btn">Order Now</a>
+<button onclick="orderCake('Brownie')" class="order-btn">Order Now</button>
 </div>
 </div>
 
@@ -498,7 +550,7 @@ Whatsapp Order
 <h3>Red Velvet Cake</h3>
 <p>Rich and moist red velvet cake with cream cheese frosting.</p>
 <div class="price">Rs. 5,900</div>
-<a href="https://wa.me/94766255747?text=I%20want%20to%20order%20Red%20Velvet%20Cake" class="order-btn">Order Now</a>
+<button onclick="orderCake('Red Velvet Cake')" class="order-btn">Order Now</button>
 </div>
 </div>
 
@@ -508,7 +560,7 @@ Whatsapp Order
 <h3>Butter Cake</h3>
 <p>Smooth buttery layers with creamy icing.</p>
 <div class="price">Rs. 4,500</div>
-<a href="https://wa.me/94766255747?text=I%20want%20to%20order%20Butter%20Cake" class="order-btn">Order Now</a>
+<button onclick="orderCake('Butter Cake')" class="order-btn">Order Now</button>
 </div>
 </div>
 
@@ -518,7 +570,7 @@ Whatsapp Order
 <h3>Cheesecake</h3>
 <p>500G: Creamy soft cheesecake with toppings.</p>
 <div class="price">Rs. 3,500</div>
-<a href="https://wa.me/94766255747?text=I%20want%20to%20order%20Cheesecake" class="order-btn">Order Now</a>
+<button onclick="orderCake('Cheesecake')" class="order-btn">Order Now</button>
 </div>
 </div>
 
@@ -679,6 +731,14 @@ Access Dashboard
 
 <script>
 
+window.addEventListener('load', ()=>{
+
+    setTimeout(()=>{
+        document.getElementById('loader').style.display='none';
+    },2000);
+
+});
+
 const orderForm = document.getElementById('orderForm');
 const ordersTable = document.getElementById('ordersTable');
 
@@ -745,6 +805,36 @@ orderForm.addEventListener('submit', function(e){
     window.open(whatsappURL, '_blank');
 
     alert('Order Submitted Successfully!');
+
+});
+
+function orderCake(cakeName){
+
+    let order = {
+        name: 'WhatsApp Customer',
+        phone: 'From WhatsApp',
+        email: '-',
+        date: new Date().toLocaleDateString(),
+        cake: cakeName,
+        details: 'Ordered directly from cake card'
+    };
+
+    orders.push(order);
+
+    localStorage.setItem('orders', JSON.stringify(orders));
+
+    displayOrders();
+
+    let message =
+`🎂 Hello Baked By Ama!
+
+I want to order:
+${cakeName}`;
+
+    let whatsappURL =
+`https://wa.me/94766255747?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappURL, '_blank');
 
     orderForm.reset();
 
